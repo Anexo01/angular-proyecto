@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VacantsComponent } from './vacants/vacants.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VacantsComponent
+    VacantsComponent,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
