@@ -3,7 +3,7 @@ const connexio = mysql.createConnection({
     user: 'root',
     host: 'localhost',
     password: '',
-    database: 'restapi_projecte',
+    database: 'projecte',
     port: '3306'
 });
 connexio.connect();
@@ -20,16 +20,16 @@ const validarusuari = (req,res)=>{
                    "Usuari validat correctament": result
                 })
            };
-            
+
         }
     );
 }
 
 const insertarusuari = (req,res)=>{
     const {email,passwd,usuari_tipus_id,activat} = req.body;
-    
+
 }
 module.exports={
     validarusuari
-    
+
 }

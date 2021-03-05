@@ -5,22 +5,22 @@ import { HttpClient} from '@angular/common/http';
 })
 export class UsuarisService {
 
-  urlServidor= 'http://localhost:3000'
+  urlServidor= 'http://localhost:3000';
   usuarivalidat = ''
   constructor(private http: HttpClient) { }
 
-  validarUsuari(email,contraseña){
+  validarUsuari(email,contrassenya){
     return this.http.post<any>(
-      this.urlServidor+'/validar',
+      this.urlServidor+'/obtenirusuari',
       {
         email: email,
-        passwd: contraseña
+        passwd: contrassenya
       }
     )
   }
 
-  registrarUsuari(email,contraseña){
-    
+  registrarUsuari(email,contrassenya){
+
   }
 
 

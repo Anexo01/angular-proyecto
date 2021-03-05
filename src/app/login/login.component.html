@@ -1,20 +1,20 @@
 <div class="container-wrapper container d-flex justify-content-center align-items-center">
-    <div class="form-marges text-center">
-      <div class="alert alert-primary" role="alert">
-        Validació
-      </div>
-      <form [formGroup]="loginForm" (submit)="submit()" >
-        <!--(submit) és un event que es desperta quan un butto de tipus submit és clicat-->
-        <div class="form-group">
-          <input type="email" class="form-control" id="email-input" placeholder="Entra Email" formControlName="email">
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" id="password-input" placeholder="Entra la contrassenya" formControlName="password">
-        </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Validar credencials</button>
-      </form>
-    <!--  <h1>{{loginForm.value.email}}</h1> -->
-      <small><a routerLink="/signup">Crear un compte nou</a></small>
+  <div class="form-marges text-center">
+    <div class="alert alert-primary" role="alert">
+      Validació
     </div>
+    <form [formGroup]="loginForm" (submit)="submit()">
+      <!--(submit) és un event que es desperta quan un butto de tipus submit és clicat-->
+      <div class="form-group">
+        <input type="email" class="form-control" id="email-input" placeholder="Entra Email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password-input" placeholder="Entra la contrassenya"
+          formControlName="password">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Validar credencials</button>
+    </form>
+    <!--  <h1>{{loginForm.value.email}}</h1> -->
+    <small><a routerLink="/signup">Crear un compte nou</a></small>
   </div>
-  
+</div>

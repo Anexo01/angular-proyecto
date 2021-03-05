@@ -4,6 +4,7 @@ import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {SignupComponent} from './signup/signup.component';
 import {VacantsComponent} from './vacants/vacants.component';
+
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo:'/home'},
   {path: 'home', component: HomeComponent},
