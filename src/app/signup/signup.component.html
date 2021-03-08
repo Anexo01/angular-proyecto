@@ -1,1 +1,25 @@
-<p>signup works!</p>
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+    <div class="form-marges text-center">
+      <div class="alert alert-primary" role="alert">
+        Registre
+      </div>
+      <form [formGroup]="signupForm" (submit)="submit()">
+        <!--(submit) és un event que es desperta quan un butto de tipus submit és clicat-->
+        <div class="form-group">
+          <input type="email" class="form-control" id="email-input" placeholder="Entra Email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="password-input" placeholder="Entra la contrassenya"
+            formControlName="password">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password-input" placeholder="Repeteix la contrassenya"
+              formControlName="password2">
+          </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Validar credencials</button>
+      </form>
+      <!--  <h1>{{loginForm.value.email}}</h1> -->
+      <small><a routerLink="/login">Tinc una compte</a></small>
+    </div>
+  </div>
+  
