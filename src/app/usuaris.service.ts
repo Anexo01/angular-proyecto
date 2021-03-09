@@ -10,6 +10,7 @@ export class UsuarisService {
   constructor(private http: HttpClient) { }
 
   validarUsuari(email,contrassenya){
+    console.log(email,contrassenya + "LOGUEADO");
     return this.http.post<any>(
       this.urlServidor+'/obtenirusuari',
       {
@@ -17,14 +18,18 @@ export class UsuarisService {
         passwd: contrassenya
       }
     )
+    
   }
 
   registrarUsuari(email,contrassenya){
+    console.log(email,contrassenya + "REGISTRADO");
     return this.http.post<any>(
-      this.urlServidor+'/registrarusuari',
+      this.urlServidor+'/insertarusuari',
       {
         email: email,
-        passwd: contrassenya
+        passwd: contrassenya,
+        usuari_tipus_id : 1,
+        activat: 0
       }
     )
   }

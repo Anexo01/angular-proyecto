@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
   public submit():void{
     const {email, password, password2} = this.signupForm.value;
     if(password == password2){
-      this.usuaris.validarUsuari(email,password).subscribe((resultat)=>{
+      this.usuaris.registrarUsuari(email,password).subscribe((resultat)=>{
         alert("Usuari creat correctament");
         this.ngOnInit();
       })
