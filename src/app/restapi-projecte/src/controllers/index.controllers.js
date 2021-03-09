@@ -27,9 +27,18 @@ const validarusuari = (req,res)=>{
 
 const insertarusuari = (req,res)=>{
     const {email,passwd,usuari_tipus_id,activat} = req.body;
-
+    connexio.query("Insert into usuari(email,passwd,usuari_tipus_id,activat) values('"+email+"',SHA1('"+passwd+"'),"+usuari_tipus_id+","+activat+")",function(error,result,fields){
+        if(error){
+            throw error;
+        }
+        else{
+            res.json({
+                "Usuari insertat correctament": email
+            })
+        }
+    })
 }
 module.exports={
-    validarusuari
-
+    validarusuari,
+    insertarusuari
 }
