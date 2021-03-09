@@ -28,12 +28,18 @@ export class SignupComponent implements OnInit {
   }
 
   public submit():void{
-    const {email, password} = this.signupForm.value;
-    this.usuaris.validarUsuari(email,password).subscribe((resultat)=>{
-      localStorage.setItem('email',resultat.email);
-      localStorage.setItem('token',resultat.token);
+    const {email, password, password2} = this.signupForm.value;
+    if(password == password2){
+      this.usuaris.validarUsuari(email,password).subscribe((resultat)=>{
+        alert("Usuari creat correctament");
+        this.ngOnInit();
+      })
+    }
+    else{
+      alert("Contraseña inserida incorrectament");
       this.ngOnInit();
-    })
+    }
+    
   }
 
 }

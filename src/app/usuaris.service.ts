@@ -20,7 +20,13 @@ export class UsuarisService {
   }
 
   registrarUsuari(email,contrassenya){
-
+    return this.http.post<any>(
+      this.urlServidor+'/registrarusuari',
+      {
+        email: email,
+        passwd: contrassenya
+      }
+    )
   }
 
 
