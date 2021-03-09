@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const connexio = mysql.createConnection({
     user: 'admin',
-    host: 'localhost',
+    host: '192.168.192.177',
     password: 'admin',
     database: 'projecte',
     port: '3306'
@@ -11,7 +11,7 @@ connexio.connect();
 const validarusuari = (req,res)=>{
     const {email,passwd} = req.body;
     connexio.query(
-        "Select email from usuari where email = '"+email+"' and passwd = '"+passwd+"'",function(error,result,fields){
+        "Select email from usuari where email = '"+email+"' and passwd = SHA1('"+passwd+"')",function(error,result,fields){
            if(error){
                throw error;
            }
