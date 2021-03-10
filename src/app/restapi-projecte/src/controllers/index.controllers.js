@@ -38,7 +38,38 @@ const insertarusuari = (req,res)=>{
         }
     })
 }
+
+const activat = (req,res)=>{
+  const {email} = req.body;
+  connexio.query("Update usuari set activat = true where email = '"+email+"'",function(error,result,fields){
+    if(error){
+      throw error;
+    }
+    else{
+      res.json({
+        "Usuari activat correctament":email
+      })
+    }
+  })
+}
+
+const desactivat = (req,res)=>{
+  const {email} = req.body;
+  connexio.query("Update usuari set activat = false where email = '"+email+"'",function(error,result,fields){
+    if(error){
+      throw error;
+    }
+    else{
+      res.json({
+        "Usuari desactivat correctament":email
+      })
+    }
+  })
+}
+
 module.exports={
     validarusuari,
-    insertarusuari
+    insertarusuari,
+    activat,
+    desactivat
 }
