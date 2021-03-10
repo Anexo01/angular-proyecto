@@ -18,7 +18,7 @@ export class UsuarisService {
         passwd: contrassenya
       }
     )
-    
+
   }
 
   registrarUsuari(email,contrassenya){
@@ -29,7 +29,7 @@ export class UsuarisService {
         email: email,
         passwd: contrassenya,
         usuari_tipus_id : 1,
-        activat: 0
+        activat: 1
       }
     )
   }
